@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Teachers } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 const teachers = Teachers({
   variable: "--font-teachers",
@@ -19,7 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${teachers.className} antialiased`}>{children}</body>
+      <body className={`${teachers.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

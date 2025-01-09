@@ -41,10 +41,10 @@ function BookAdd() {
         required
       />
       <div className="flex gap-2">
-        <Button variant="secondary">
+        <Button variant="secondary" type="button">
           <Cross /> Sort
         </Button>
-        <Button>
+        <Button type="submit">
           <ArrowDown01 /> Add
         </Button>
       </div>
